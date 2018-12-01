@@ -14,17 +14,10 @@ final class ARTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var demoStateRows: [ARDemoState] = [
-        .featurePointTracking,
-        .spriteKitContent,
-        .sceneKitContent,
-        .planeDetection,
-        .faceTracking,
-        .referenceImages,
-        .referenceObjects,
-        .placing3DObjects,
-        .interactingWith3DObjects,
-        .sharingARContent
+    var demoStateRows: [[ARDemoState]] = [
+        [.featurePointTracking, .spriteKitContent, .sceneKitContent, .spriteKitAndSceneKitContent],
+        [.planeDetection, .faceTracking, .referenceImages, .referenceObjectScanner, .referenceObjects],
+        [.placing3DObjects, .interactingWith3DObjects, .sharingARContent]
     ]
     
     weak var delegate: ARDemoDelegate?
@@ -36,6 +29,6 @@ final class ARTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        delegate?.didSelectState(demoStateRows[indexPath.row])
+        delegate?.didSelectState(demoStateRows[indexPath.section][indexPath.row])
     }
 }

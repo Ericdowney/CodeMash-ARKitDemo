@@ -21,6 +21,13 @@ final class SpriteKitContentViewController: BaseARDemoViewController {
     
     // MARK: - Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let scene = SKScene(fileNamed: "Demo1")
+        spriteKitView.presentScene(scene)
+    }
+    
     // MARK: - Methods
     
 }

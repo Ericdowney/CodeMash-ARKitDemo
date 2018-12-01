@@ -10,15 +10,17 @@ import UIKit
 import SceneKit
 import ARKit
 
-enum ARDemoState {
+enum ARDemoState: String {
     case none
     
     case featurePointTracking
     case spriteKitContent
     case sceneKitContent
+    case spriteKitAndSceneKitContent
     case planeDetection
     case faceTracking
     case referenceImages
+    case referenceObjectScanner
     case referenceObjects
     case placing3DObjects
     case interactingWith3DObjects
@@ -39,6 +41,10 @@ final class ARDemoViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
+        if let destination = segue.destination as? ARTableViewController {
+            destination.delegate = self
+        }
         
         if let destination = segue.destination as? ARContainerViewController {
             destination.demoState = demoState

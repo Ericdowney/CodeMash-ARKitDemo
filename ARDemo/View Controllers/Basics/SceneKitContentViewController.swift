@@ -25,8 +25,9 @@ final class SceneKitContentViewController: BaseARDemoViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = SCNScene()
-        sceneKitView.scene = scene
+        if let scene = SCNScene(named: "art.scnassets/ship.scn") {
+            sceneKitView.scene = scene
+        }
     }
     
     // MARK: - Methods

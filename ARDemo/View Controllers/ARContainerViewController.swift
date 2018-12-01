@@ -14,7 +14,11 @@ final class ARContainerViewController: UIViewController {
     
     // MARK: - Properties
     
-    var demoState: ARDemoState?
+    var demoState: ARDemoState? {
+        didSet {
+            title = demoState?.rawValue
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -36,12 +40,16 @@ final class ARContainerViewController: UIViewController {
             addARViewCtrl(SpriteKitContentViewController())
         case .sceneKitContent:
             addARViewCtrl(SceneKitContentViewController())
+        case .spriteKitAndSceneKitContent:
+            addARViewCtrl(SpriteKitAndSceneKitContentViewControllerViewController())
         case .planeDetection:
             addARViewCtrl(PlaneDetectionViewController())
         case .faceTracking:
             addARViewCtrl(FaceTrackingViewController())
         case .referenceImages:
             addARViewCtrl(ReferenceImagesViewController())
+        case .referenceObjectScanner:
+            addARViewCtrl(ReferenceObjectScannerViewController())
         case .referenceObjects:
             addARViewCtrl(ReferenceObjectsViewController())
         case .placing3DObjects:
@@ -55,10 +63,12 @@ final class ARContainerViewController: UIViewController {
         }
     }
     
-    func addARViewCtrl(_ viewCtrl: UIViewController) {
+    private func addARViewCtrl(_ viewCtrl: UIViewController) {
         addChild(viewCtrl)
         view.addSubview(viewCtrl.view)
         viewCtrl.didMove(toParent: self)
+        
+        viewCtrl.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             viewCtrl.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
