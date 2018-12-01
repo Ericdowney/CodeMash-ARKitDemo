@@ -27,10 +27,7 @@ final class PlaneDetectionViewController: BaseARDemoViewController {
         
         let scene = SCNScene()
         sceneKitView.scene = scene
-        
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        sceneKitView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        configureAR()
     }
     
     // MARK: - Methods
@@ -38,7 +35,29 @@ final class PlaneDetectionViewController: BaseARDemoViewController {
 }
 
 extension PlaneDetectionViewController {
-    override func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        return nil
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        guard let planeAnchor = anchor as? ARPlaneAnchor, let defaultDevice = MTLCreateSystemDefaultDevice() else {
+            return nil
+        }
+        let planeGeometry = ARSCNPlaneGeometry(device: defaultDevice)
+        planeGeometry?.update(from: planeAnchor.geometry)
+        planeGeometry?.firstMaterial?.diffuse.contents = planeColor(for: planeAnchor.alignment)
+        return SCNNode(geometry: planeGeometry)
+    }
+    
+    override func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        guard let planeAnchor = anchor as? ARPlaneAnchor, let planeGeometry = node.geometry as? ARSCNPlaneGeometry else {
+            return
+        }
+        planeGeometry.update(from: planeAnchor.geometry)
+    }
+    
+    private func planeColor(for alignment: ARPlaneAnchor.Alignment) -> UIColor {
+        switch alignment {
+        case .horizontal:
+            return UIColor.blue.withAlphaComponent(0.3)
+        case .vertical:
+            return UIColor.green.withAlphaComponent(0.3)
+        }
     }
 }

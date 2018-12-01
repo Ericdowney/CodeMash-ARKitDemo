@@ -23,8 +23,14 @@ class BaseARDemoViewController: UIViewController {
         return .sceneKit
     }
     
+    var embeddedViewContainer: UIView {
+        return view
+    }
+    
     var sceneKitView: ARSCNView = ARSCNView()
     var spriteKitView: ARSKView = ARSKView()
+    
+    var lightNodes: [SCNNode] = []
     
     // MARK: - Lifecycle
     
@@ -32,6 +38,7 @@ class BaseARDemoViewController: UIViewController {
         super.viewDidLoad()
         
         configureSceneView()
+        configureAR()
     }
     
     override func didMove(toParent parent: UIViewController?) {
@@ -51,6 +58,7 @@ class BaseARDemoViewController: UIViewController {
         switch arState {
         case .sceneKit:
             sceneKitView.delegate = self
+            sceneKitView.showsStatistics = true
             sceneKitView.debugOptions = [.showFeaturePoints, .showWorldOrigin]
         case .spriteKit:
             spriteKitView.delegate = self
@@ -59,32 +67,49 @@ class BaseARDemoViewController: UIViewController {
         }
     }
     
+    func configureAR() {
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.isLightEstimationEnabled = true
+        switch arState {
+        case .sceneKit:
+            sceneKitView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        case .spriteKit:
+            spriteKitView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        }
+    }
+    
     func addSpriteKitView() {
-        view.addSubview(spriteKitView)
+        spriteKitView.translatesAutoresizingMaskIntoConstraints = false
+        embeddedViewContainer.addSubview(spriteKitView)
         NSLayoutConstraint.activate([
-            spriteKitView.topAnchor.constraint(equalTo: view.topAnchor),
-            spriteKitView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            spriteKitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            spriteKitView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            spriteKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
+            spriteKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
+            spriteKitView.leadingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.leadingAnchor),
+            spriteKitView.trailingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
     
     func addSceneKitView() {
-        view.addSubview(sceneKitView)
+        sceneKitView.translatesAutoresizingMaskIntoConstraints = false
+        embeddedViewContainer.addSubview(sceneKitView)
         NSLayoutConstraint.activate([
-            sceneKitView.topAnchor.constraint(equalTo: view.topAnchor),
-            sceneKitView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            sceneKitView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            sceneKitView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            sceneKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
+            sceneKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
+            sceneKitView.leadingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.leadingAnchor),
+            sceneKitView.trailingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.trailingAnchor),
         ])
+    }
+    
+    func displayError(title: String?, message: String?, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: handler)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
 extension BaseARDemoViewController: ARSCNViewDelegate {
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        return nil
-    }
-
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
 
     }
@@ -100,13 +125,18 @@ extension BaseARDemoViewController: ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
 
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if let lightEstimation = sceneKitView.session.currentFrame?.lightEstimate {
+            lightNodes.forEach { node in
+                node.light?.intensity = lightEstimation.ambientIntensity
+                node.light?.temperature = lightEstimation.ambientColorTemperature
+            }
+        }
+    }
 }
 
 extension BaseARDemoViewController: ARSKViewDelegate {
-    func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        return nil
-    }
-    
     func view(_ view: ARSKView, didAdd node: SKNode, for anchor: ARAnchor) {
         
     }

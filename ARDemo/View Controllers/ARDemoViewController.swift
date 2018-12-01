@@ -10,21 +10,6 @@ import UIKit
 import SceneKit
 import ARKit
 
-enum ARDemoState {
-    case none
-    
-    case featurePointTracking
-    case spriteKitContent
-    case sceneKitContent
-    case planeDetection
-    case faceTracking
-    case referenceImages
-    case referenceObjects
-    case placing3DObjects
-    case interactingWith3DObjects
-    case sharingARContent
-}
-
 protocol ARDemoDelegate: class {
     func didSelectState(_ state: ARDemoState)
 }
@@ -39,6 +24,10 @@ final class ARDemoViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
+        if let destination = segue.destination as? ARTableViewController {
+            destination.delegate = self
+        }
         
         if let destination = segue.destination as? ARContainerViewController {
             destination.demoState = demoState

@@ -14,7 +14,11 @@ final class ARContainerViewController: UIViewController {
     
     // MARK: - Properties
     
-    var demoState: ARDemoState?
+    var demoState: ARDemoState? {
+        didSet {
+            title = demoState?.rawValue
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -29,36 +33,17 @@ final class ARContainerViewController: UIViewController {
     // MARK: - Methods
     
     func update(basedOn state: ARDemoState) {
-        switch state {
-        case .featurePointTracking:
-            addARViewCtrl(FeaturePointTrackingViewController())
-        case .spriteKitContent:
-            addARViewCtrl(SpriteKitContentViewController())
-        case .sceneKitContent:
-            addARViewCtrl(SceneKitContentViewController())
-        case .planeDetection:
-            addARViewCtrl(PlaneDetectionViewController())
-        case .faceTracking:
-            addARViewCtrl(FaceTrackingViewController())
-        case .referenceImages:
-            addARViewCtrl(ReferenceImagesViewController())
-        case .referenceObjects:
-            addARViewCtrl(ReferenceObjectsViewController())
-        case .placing3DObjects:
-            addARViewCtrl(Placing3DObjectsViewController())
-        case .interactingWith3DObjects:
-            addARViewCtrl(InteractingWith3DObjectsViewController())
-        case .sharingARContent:
-            addARViewCtrl(SharingARContentViewController())
-        case .none:
-            break
+        if let viewCtrl = state.viewController {
+            addARViewCtrl(viewCtrl)
         }
     }
     
-    func addARViewCtrl(_ viewCtrl: UIViewController) {
+    private func addARViewCtrl(_ viewCtrl: UIViewController) {
         addChild(viewCtrl)
         view.addSubview(viewCtrl.view)
         viewCtrl.didMove(toParent: self)
+        
+        viewCtrl.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             viewCtrl.view.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

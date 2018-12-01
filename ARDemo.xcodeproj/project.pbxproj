@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E754121B5A5D300AC4B67 /* SceneKit+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */; };
+		890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */; };
 		89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48821B1C75400A90C82 /* AppDelegate.swift */; };
 		89A6C48B21B1C75400A90C82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6C48A21B1C75400A90C82 /* art.scnassets */; };
 		89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48C21B1C75400A90C82 /* ARDemoViewController.swift */; };
@@ -22,11 +24,17 @@
 		89A6C4BB21B1D3F400A90C82 /* PlaneDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4BA21B1D3F400A90C82 /* PlaneDetectionViewController.swift */; };
 		89A6C4BD21B1D40500A90C82 /* FaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4BC21B1D40500A90C82 /* FaceTrackingViewController.swift */; };
 		89A6C4BF21B1D41500A90C82 /* ReferenceImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4BE21B1D41500A90C82 /* ReferenceImagesViewController.swift */; };
-		89A6C4C121B1D42800A90C82 /* ReferenceObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4C021B1D42800A90C82 /* ReferenceObjectsViewController.swift */; };
 		89A6C4C321B1D43F00A90C82 /* Placing3DObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4C221B1D43F00A90C82 /* Placing3DObjectsViewController.swift */; };
 		89A6C4EA21B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */; };
-		89A6C4EC21B1F48F00A90C82 /* SharingARContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */; };
 		89A6C4EE21B2041A00A90C82 /* ARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4ED21B2041A00A90C82 /* ARTableViewController.swift */; };
+		C12404A021BEE19C003747C5 /* UIStoryboard+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */; };
+		C185C25221E17D76009FECB2 /* RetailExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185C25121E17D76009FECB2 /* RetailExampleViewController.swift */; };
+		C185C25421E281FA009FECB2 /* ARDemoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185C25321E281FA009FECB2 /* ARDemoState.swift */; };
+		C185C25821E28AAF009FECB2 /* XRayExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185C25621E287F4009FECB2 /* XRayExampleViewController.swift */; };
+		C1FEA7BF21B337AF00793EE2 /* Demo1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FEA7BE21B337AF00793EE2 /* Demo1.sks */; };
+		C1FEA7C221B3385D00793EE2 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FEA7C021B3385D00793EE2 /* Rain.sks */; };
+		C1FEA7C321B3385D00793EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FEA7C121B3385D00793EE2 /* Assets.xcassets */; };
+		C1FEA7C521B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FEA7C421B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneKit+Utilities.swift"; sourceTree = "<group>"; };
+		890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseARInteractionViewController.swift; sourceTree = "<group>"; };
 		89A6C48521B1C75400A90C82 /* ARDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6C48821B1C75400A90C82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6C48A21B1C75400A90C82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -59,11 +69,18 @@
 		89A6C4BA21B1D3F400A90C82 /* PlaneDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneDetectionViewController.swift; sourceTree = "<group>"; };
 		89A6C4BC21B1D40500A90C82 /* FaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackingViewController.swift; sourceTree = "<group>"; };
 		89A6C4BE21B1D41500A90C82 /* ReferenceImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceImagesViewController.swift; sourceTree = "<group>"; };
-		89A6C4C021B1D42800A90C82 /* ReferenceObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceObjectsViewController.swift; sourceTree = "<group>"; };
 		89A6C4C221B1D43F00A90C82 /* Placing3DObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placing3DObjectsViewController.swift; sourceTree = "<group>"; };
 		89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractingWith3DObjectsViewController.swift; sourceTree = "<group>"; };
-		89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingARContentViewController.swift; sourceTree = "<group>"; };
 		89A6C4ED21B2041A00A90C82 /* ARTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTableViewController.swift; sourceTree = "<group>"; };
+		C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utilities.swift"; sourceTree = "<group>"; };
+		C185C25121E17D76009FECB2 /* RetailExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetailExampleViewController.swift; sourceTree = "<group>"; };
+		C185C25321E281FA009FECB2 /* ARDemoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDemoState.swift; sourceTree = "<group>"; };
+		C185C25521E28283009FECB2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C185C25621E287F4009FECB2 /* XRayExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRayExampleViewController.swift; sourceTree = "<group>"; };
+		C1FEA7BE21B337AF00793EE2 /* Demo1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Demo1.sks; sourceTree = "<group>"; };
+		C1FEA7C021B3385D00793EE2 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
+		C1FEA7C121B3385D00793EE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1FEA7C421B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpriteKit+SceneKitContentViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +101,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		890E753F21B5A5C200AC4B67 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */,
+				C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		89A6C47C21B1C75400A90C82 = {
 			isa = PBXGroup;
 			children = (
+				C185C25521E28283009FECB2 /* README.md */,
 				89A6C48721B1C75400A90C82 /* ARDemo */,
 				89A6C49E21B1C75500A90C82 /* ARDemoTests */,
 				89A6C48621B1C75400A90C82 /* Products */,
@@ -107,6 +134,7 @@
 			children = (
 				89A6C48821B1C75400A90C82 /* AppDelegate.swift */,
 				89A6C4AA21B1D28B00A90C82 /* AR Assets */,
+				890E753F21B5A5C200AC4B67 /* Utilities */,
 				89A6C4AB21B1D31E00A90C82 /* View Controllers */,
 				89A6C48E21B1C75400A90C82 /* Main.storyboard */,
 				89A6C49121B1C75500A90C82 /* Assets.xcassets */,
@@ -129,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				89A6C48A21B1C75400A90C82 /* art.scnassets */,
+				C1FEA7BE21B337AF00793EE2 /* Demo1.sks */,
+				C1FEA7C021B3385D00793EE2 /* Rain.sks */,
+				C1FEA7C121B3385D00793EE2 /* Assets.xcassets */,
 			);
 			path = "AR Assets";
 			sourceTree = "<group>";
@@ -136,14 +167,15 @@
 		89A6C4AB21B1D31E00A90C82 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C185C25321E281FA009FECB2 /* ARDemoState.swift */,
 				89A6C48C21B1C75400A90C82 /* ARDemoViewController.swift */,
-				89A6C4B821B1D3AC00A90C82 /* ARContainerViewController.swift */,
 				89A6C4ED21B2041A00A90C82 /* ARTableViewController.swift */,
+				89A6C4B821B1D3AC00A90C82 /* ARContainerViewController.swift */,
 				89A6C4B621B1D37900A90C82 /* BaseARDemoViewController.swift */,
 				89A6C4AC21B1D32600A90C82 /* Basics */,
 				89A6C4AD21B1D32C00A90C82 /* Tracking */,
 				89A6C4AE21B1D33300A90C82 /* Interaction */,
-				89A6C4AF21B1D33C00A90C82 /* Shared Experiences */,
+				89A6C4AF21B1D33C00A90C82 /* Practical Examples */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -154,6 +186,7 @@
 				89A6C4B021B1D35300A90C82 /* FeaturePointTrackingViewController.swift */,
 				89A6C4B221B1D35D00A90C82 /* SpriteKitContentViewController.swift */,
 				89A6C4B421B1D36600A90C82 /* SceneKitContentViewController.swift */,
+				C1FEA7C421B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -164,7 +197,6 @@
 				89A6C4BA21B1D3F400A90C82 /* PlaneDetectionViewController.swift */,
 				89A6C4BC21B1D40500A90C82 /* FaceTrackingViewController.swift */,
 				89A6C4BE21B1D41500A90C82 /* ReferenceImagesViewController.swift */,
-				89A6C4C021B1D42800A90C82 /* ReferenceObjectsViewController.swift */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -172,18 +204,20 @@
 		89A6C4AE21B1D33300A90C82 /* Interaction */ = {
 			isa = PBXGroup;
 			children = (
+				890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */,
 				89A6C4C221B1D43F00A90C82 /* Placing3DObjectsViewController.swift */,
 				89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */,
 			);
 			path = Interaction;
 			sourceTree = "<group>";
 		};
-		89A6C4AF21B1D33C00A90C82 /* Shared Experiences */ = {
+		89A6C4AF21B1D33C00A90C82 /* Practical Examples */ = {
 			isa = PBXGroup;
 			children = (
-				89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */,
+				C185C25121E17D76009FECB2 /* RetailExampleViewController.swift */,
+				C185C25621E287F4009FECB2 /* XRayExampleViewController.swift */,
 			);
-			path = "Shared Experiences";
+			path = "Practical Examples";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +304,9 @@
 				89A6C48B21B1C75400A90C82 /* art.scnassets in Resources */,
 				89A6C49521B1C75500A90C82 /* LaunchScreen.storyboard in Resources */,
 				89A6C49221B1C75500A90C82 /* Assets.xcassets in Resources */,
+				C1FEA7C221B3385D00793EE2 /* Rain.sks in Resources */,
+				C1FEA7C321B3385D00793EE2 /* Assets.xcassets in Resources */,
+				C1FEA7BF21B337AF00793EE2 /* Demo1.sks in Resources */,
 				89A6C49021B1C75400A90C82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,17 +329,22 @@
 				89A6C4EE21B2041A00A90C82 /* ARTableViewController.swift in Sources */,
 				89A6C4BD21B1D40500A90C82 /* FaceTrackingViewController.swift in Sources */,
 				89A6C4B321B1D35D00A90C82 /* SpriteKitContentViewController.swift in Sources */,
+				C12404A021BEE19C003747C5 /* UIStoryboard+Utilities.swift in Sources */,
+				C185C25821E28AAF009FECB2 /* XRayExampleViewController.swift in Sources */,
+				C185C25221E17D76009FECB2 /* RetailExampleViewController.swift in Sources */,
 				89A6C4B121B1D35300A90C82 /* FeaturePointTrackingViewController.swift in Sources */,
 				89A6C4EA21B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift in Sources */,
 				89A6C4BF21B1D41500A90C82 /* ReferenceImagesViewController.swift in Sources */,
 				89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */,
 				89A6C4B721B1D37900A90C82 /* BaseARDemoViewController.swift in Sources */,
 				89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */,
+				890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */,
 				89A6C4B521B1D36600A90C82 /* SceneKitContentViewController.swift in Sources */,
-				89A6C4EC21B1F48F00A90C82 /* SharingARContentViewController.swift in Sources */,
+				C1FEA7C521B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift in Sources */,
+				C185C25421E281FA009FECB2 /* ARDemoState.swift in Sources */,
+				890E754121B5A5D300AC4B67 /* SceneKit+Utilities.swift in Sources */,
 				89A6C4C321B1D43F00A90C82 /* Placing3DObjectsViewController.swift in Sources */,
 				89A6C4BB21B1D3F400A90C82 /* PlaneDetectionViewController.swift in Sources */,
-				89A6C4C121B1D42800A90C82 /* ReferenceObjectsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z46KU7GJC9;
 				INFOPLIST_FILE = ARDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,6 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z46KU7GJC9;
 				INFOPLIST_FILE = ARDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

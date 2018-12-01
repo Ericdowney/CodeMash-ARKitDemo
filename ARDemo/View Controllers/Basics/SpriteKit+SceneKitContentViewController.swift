@@ -1,16 +1,17 @@
 //
-//  SceneKitContentViewController.swift
+//  SpriteKit+SceneKitContentViewController.swift
 //  ARDemo
 //
-//  Created by Downey, Eric on 11/30/18.
+//  Created by Eric Downey on 12/1/18.
 //  Copyright © 2018 downey. All rights reserved.
 //
 
 import UIKit
-import SceneKit
 import ARKit
+import SpriteKit
+import SceneKit
 
-final class SceneKitContentViewController: BaseARDemoViewController {
+final class SpriteKitAndSceneKitContentViewControllerViewController: BaseARDemoViewController {
     
     // MARK: - Outlets
     
@@ -27,8 +28,15 @@ final class SceneKitContentViewController: BaseARDemoViewController {
         
         if let scene = SCNScene(named: "art.scnassets/ship.scn") {
             sceneKitView.scene = scene
+            sceneKitView.overlaySKScene = {
+                let skScene = SKScene(fileNamed: "Demo1")
+                skScene?.size = view.bounds.size
+                return skScene
+            }()
         }
     }
+    
+    // MARK: - Actions
     
     // MARK: - Methods
     
