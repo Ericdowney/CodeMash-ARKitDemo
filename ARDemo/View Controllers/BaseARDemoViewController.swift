@@ -23,6 +23,10 @@ class BaseARDemoViewController: UIViewController {
         return .sceneKit
     }
     
+    var embeddedViewContainer: UIView {
+        return view
+    }
+    
     var sceneKitView: ARSCNView = ARSCNView()
     var spriteKitView: ARSKView = ARSKView()
     
@@ -77,10 +81,10 @@ class BaseARDemoViewController: UIViewController {
         spriteKitView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spriteKitView)
         NSLayoutConstraint.activate([
-            spriteKitView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            spriteKitView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            spriteKitView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            spriteKitView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            spriteKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
+            spriteKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
+            spriteKitView.leadingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.leadingAnchor),
+            spriteKitView.trailingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
     
@@ -88,10 +92,10 @@ class BaseARDemoViewController: UIViewController {
         sceneKitView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sceneKitView)
         NSLayoutConstraint.activate([
-            sceneKitView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            sceneKitView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            sceneKitView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            sceneKitView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            sceneKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
+            sceneKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
+            sceneKitView.leadingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.leadingAnchor),
+            sceneKitView.trailingAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
     
@@ -118,6 +122,10 @@ extension BaseARDemoViewController: ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
 
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
     }
 }
 

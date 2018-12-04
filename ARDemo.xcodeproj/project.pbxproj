@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E754121B5A5D300AC4B67 /* SceneKit+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */; };
+		890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */; };
 		89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48821B1C75400A90C82 /* AppDelegate.swift */; };
 		89A6C48B21B1C75400A90C82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6C48A21B1C75400A90C82 /* art.scnassets */; };
 		89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48C21B1C75400A90C82 /* ARDemoViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneKit+Utilities.swift"; sourceTree = "<group>"; };
+		890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseARInteractionViewController.swift; sourceTree = "<group>"; };
 		89A6C48521B1C75400A90C82 /* ARDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6C48821B1C75400A90C82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6C48A21B1C75400A90C82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		890E753F21B5A5C200AC4B67 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		89A6C47C21B1C75400A90C82 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 			children = (
 				89A6C48821B1C75400A90C82 /* AppDelegate.swift */,
 				89A6C4AA21B1D28B00A90C82 /* AR Assets */,
+				890E753F21B5A5C200AC4B67 /* Utilities */,
 				89A6C4AB21B1D31E00A90C82 /* View Controllers */,
 				89A6C48E21B1C75400A90C82 /* Main.storyboard */,
 				89A6C49121B1C75500A90C82 /* Assets.xcassets */,
@@ -187,6 +200,7 @@
 		89A6C4AE21B1D33300A90C82 /* Interaction */ = {
 			isa = PBXGroup;
 			children = (
+				890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */,
 				89A6C4C221B1D43F00A90C82 /* Placing3DObjectsViewController.swift */,
 				89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */,
 			);
@@ -317,9 +331,11 @@
 				89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */,
 				89A6C4B721B1D37900A90C82 /* BaseARDemoViewController.swift in Sources */,
 				89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */,
+				890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */,
 				89A6C4B521B1D36600A90C82 /* SceneKitContentViewController.swift in Sources */,
 				C1FEA7C521B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift in Sources */,
 				89A6C4EC21B1F48F00A90C82 /* SharingARContentViewController.swift in Sources */,
+				890E754121B5A5D300AC4B67 /* SceneKit+Utilities.swift in Sources */,
 				89A6C4C321B1D43F00A90C82 /* Placing3DObjectsViewController.swift in Sources */,
 				89A6C4BB21B1D3F400A90C82 /* PlaneDetectionViewController.swift in Sources */,
 				89A6C4C121B1D42800A90C82 /* ReferenceObjectsViewController.swift in Sources */,

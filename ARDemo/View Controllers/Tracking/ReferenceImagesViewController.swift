@@ -51,6 +51,7 @@ extension ReferenceImagesViewController {
                                  chamferRadius: 0.0)
             box.firstMaterial?.lightingModel = .physicallyBased
             let boxNode = SCNNode(geometry: box)
+            boxNode.castsShadow = true
             boxNode.opacity = 0.5
             boxNode.eulerAngles.x = -.pi / 2
             node.addChildNode(boxNode)

@@ -24,6 +24,15 @@ final class ReferenceObjectScannerViewController: BaseARDemoViewController {
     
     // MARK: - Actions
     
+    @objc func createReferenceObject() {
+        // TODO: Create Reference Object Here
+    }
+    
     // MARK: - Methods
     
+    override func configureAR() {
+        let configuration = ARObjectScanningConfiguration()
+        configuration.planeDetection = .horizontal
+        sceneKitView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+    }
 }
