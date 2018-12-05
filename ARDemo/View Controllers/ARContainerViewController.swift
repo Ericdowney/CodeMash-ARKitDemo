@@ -53,9 +53,9 @@ final class ARContainerViewController: UIViewController {
         case .referenceObjects:
             addARViewCtrl(ReferenceObjectsViewController())
         case .placing3DObjects:
-            addARViewCtrl(Placing3DObjectsViewController())
+            addARViewCtrl(Placing3DObjectsViewController.instantiate())
         case .interactingWith3DObjects:
-            addARViewCtrl(InteractingWith3DObjectsViewController())
+            addARViewCtrl(InteractingWith3DObjectsViewController.instantiate())
         case .sharingARContent:
             addARViewCtrl(SharingARContentViewController())
         case .none:

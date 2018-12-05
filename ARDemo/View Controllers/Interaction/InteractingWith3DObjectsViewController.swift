@@ -10,7 +10,10 @@ import UIKit
 import ARKit
 import SceneKit
 
-final class InteractingWith3DObjectsViewController: Placing3DObjectsViewController {
+final class InteractingWith3DObjectsViewController: BaseARInteractionViewController, StoryboardCreatable {
+    static var storyboardId: String {
+        return "ARDemo.interaction"
+    }
     
     // MARK: - Outlets
     

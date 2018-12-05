@@ -8,13 +8,17 @@
 
 import UIKit
 
-final class BaseARInteractionViewController: BaseARDemoViewController {
+class BaseARInteractionViewController: BaseARDemoViewController {
     
     // MARK: - Outlets
     
     @IBOutlet var collectionView: UICollectionView!
     
     // MARK: - Properties
+    
+    override var arState: BaseARDemoViewController.ARState {
+        return .sceneKit
+    }
     
     // MARK: - Lifecycle
     

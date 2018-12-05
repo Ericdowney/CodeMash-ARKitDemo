@@ -10,15 +10,14 @@ import UIKit
 import ARKit
 import SceneKit
 
-class Placing3DObjectsViewController: BaseARDemoViewController {
+class Placing3DObjectsViewController: BaseARInteractionViewController, StoryboardCreatable {
+    static var storyboardId: String {
+        return "ARDemo.placement"
+    }
     
     // MARK: - Outlets
     
     // MARK: - Properties
-    
-    override var arState: BaseARDemoViewController.ARState {
-        return .sceneKit
-    }
     
     // MARK: - Lifecycle
     
