@@ -30,16 +30,20 @@ final class InteractingWith3DObjectsViewController: BaseARInteractionViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(select3DObject(_:)))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(select3DObjectFromScene))
         sceneKitView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     // MARK: - Methods
     
-    @objc func select3DObject(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func select3DObjectFromScene(_ gestureRecognizer: UITapGestureRecognizer) {
         let location = gestureRecognizer.location(in: sceneKitView)
         let results = sceneKitView.hitTest(location, options: nil)
         selectedObject = results.first?.node
+    }
+    
+    override func didSelectAsset(_ asset: BaseARInteractionViewController.AssetReference) {
+        
     }
 }
 

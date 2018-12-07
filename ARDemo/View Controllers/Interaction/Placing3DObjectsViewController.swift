@@ -23,6 +23,9 @@ class Placing3DObjectsViewController: BaseARInteractionViewController, Storyboar
     
     // MARK: - Methods
     
+    override func didSelectAsset(_ asset: BaseARInteractionViewController.AssetReference) {
+        
+    }
 }
 
 extension Placing3DObjectsViewController {
