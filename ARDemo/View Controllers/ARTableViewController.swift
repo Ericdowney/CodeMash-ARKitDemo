@@ -17,7 +17,8 @@ final class ARTableViewController: UITableViewController {
     var demoStateRows: [[ARDemoState]] = [
         [.featurePointTracking, .spriteKitContent, .sceneKitContent, .spriteKitAndSceneKitContent],
         [.planeDetection, .faceTracking, .referenceImages, .referenceObjectScanner, .referenceObjects],
-        [.placing3DObjects, .interactingWith3DObjects, .sharingARContent]
+        [.placing3DObjects, .interactingWith3DObjects],
+        [.sharingARContent]
     ]
     
     weak var delegate: ARDemoDelegate?

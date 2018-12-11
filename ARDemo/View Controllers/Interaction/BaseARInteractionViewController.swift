@@ -25,6 +25,7 @@ class BaseARInteractionViewController: BaseARDemoViewController {
     enum AssetIdentifier: String {
         case chair = "chair_3d"
         case table = "table_3d"
+        case tree = "tree_3d"
         
         var displayName: String {
             switch self {
@@ -32,6 +33,8 @@ class BaseARInteractionViewController: BaseARDemoViewController {
                 return "Chair"
             case .table:
                 return "Table"
+            case .tree:
+                return "Tree"
             }
         }
     }
@@ -65,13 +68,12 @@ class BaseARInteractionViewController: BaseARDemoViewController {
     
     func loadData() {
         assetReferences = [
-            assetReference(with: .chair),
-            assetReference(with: .table),
+            assetReference(with: .tree),
         ]
         collectionView.reloadData()
     }
     
-    func didSelectAsset(_ asset: AssetReference) {
+    func didSelectAsset(_ asset: AssetReference) -> ARAnchor? {
         fatalError("Override in subclass")
     }
     
@@ -108,6 +110,8 @@ extension BaseARInteractionViewController: UICollectionViewDataSource, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        didSelectAsset(assetReferences[indexPath.row])
+        if let anchor = didSelectAsset(assetReferences[indexPath.row]) {
+            sceneKitView.session.add(anchor: anchor)
+        }
     }
 }

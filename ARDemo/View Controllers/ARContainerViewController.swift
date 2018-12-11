@@ -53,11 +53,11 @@ final class ARContainerViewController: UIViewController {
         case .referenceObjects:
             addARViewCtrl(ReferenceObjectsViewController())
         case .placing3DObjects:
-            addARViewCtrl(Placing3DObjectsViewController.instantiate())
+            addARViewCtrl(UIStoryboard.instantiate(withIdentifier: "ARDemo.placement"))
         case .interactingWith3DObjects:
-            addARViewCtrl(InteractingWith3DObjectsViewController.instantiate())
+            addARViewCtrl(UIStoryboard.instantiate(withIdentifier: "ARDemo.interaction"))
         case .sharingARContent:
-            addARViewCtrl(SharingARContentViewController())
+            addARViewCtrl(UIStoryboard.instantiate(withIdentifier: "ARDemo.sharing"))
         case .none:
             break
         }

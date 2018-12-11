@@ -10,16 +10,24 @@ import UIKit
 import ARKit
 import SceneKit
 
-final class InteractingWith3DObjectsViewController: BaseARInteractionViewController, StoryboardCreatable {
-    static var storyboardId: String {
-        return "ARDemo.interaction"
-    }
+final class InteractingWith3DObjectsViewController: Placing3DObjectsViewController {
     
     // MARK: - Outlets
     
     // MARK: - Properties
     
-    var selectedObject: SCNNode?
+    var selectedNode: SCNNode? {
+        willSet {
+            if selectedNode?.name == "Mesh-Node" {
+                selectedNode?.geometry?.firstMaterial?.diffuse.contents = UIColor.green
+            }
+        }
+        didSet {
+            if selectedNode?.name == "Mesh-Node" {
+                selectedNode?.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+            }
+        }
+    }
     
     override var arState: BaseARDemoViewController.ARState {
         return .sceneKit
@@ -39,21 +47,11 @@ final class InteractingWith3DObjectsViewController: BaseARInteractionViewControl
     @objc func select3DObjectFromScene(_ gestureRecognizer: UITapGestureRecognizer) {
         let location = gestureRecognizer.location(in: sceneKitView)
         let results = sceneKitView.hitTest(location, options: nil)
-        selectedObject = results.first?.node
-    }
-    
-    override func didSelectAsset(_ asset: BaseARInteractionViewController.AssetReference) {
-        
-    }
-}
-
-extension InteractingWith3DObjectsViewController {
-    override func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        if let _ = selectedObject {
-            // TODO: Highlight Selected Object
+        let nodeResult = results.first { result in
+            result.node.name == "Mesh-Node"
         }
-        else {
-            super.renderer(renderer, updateAtTime: time)
+        if let selectedNode = nodeResult?.node, selectedNode.name == "Mesh-Node" {
+            self.selectedNode = selectedNode
         }
     }
 }

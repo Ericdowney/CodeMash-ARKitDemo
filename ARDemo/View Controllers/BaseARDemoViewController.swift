@@ -30,6 +30,8 @@ class BaseARDemoViewController: UIViewController {
     var sceneKitView: ARSCNView = ARSCNView()
     var spriteKitView: ARSKView = ARSKView()
     
+    var lightNodes: [SCNNode] = []
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -79,7 +81,7 @@ class BaseARDemoViewController: UIViewController {
     
     func addSpriteKitView() {
         spriteKitView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(spriteKitView)
+        embeddedViewContainer.addSubview(spriteKitView)
         NSLayoutConstraint.activate([
             spriteKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
             spriteKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
@@ -90,7 +92,7 @@ class BaseARDemoViewController: UIViewController {
     
     func addSceneKitView() {
         sceneKitView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(sceneKitView)
+        embeddedViewContainer.addSubview(sceneKitView)
         NSLayoutConstraint.activate([
             sceneKitView.topAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.topAnchor),
             sceneKitView.bottomAnchor.constraint(equalTo: embeddedViewContainer.safeAreaLayoutGuide.bottomAnchor),
@@ -125,7 +127,12 @@ extension BaseARDemoViewController: ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
+        if let lightEstimation = sceneKitView.session.currentFrame?.lightEstimate {
+            lightNodes.forEach { node in
+                node.light?.intensity = lightEstimation.ambientIntensity
+                node.light?.temperature = lightEstimation.ambientColorTemperature
+            }
+        }
     }
 }
 

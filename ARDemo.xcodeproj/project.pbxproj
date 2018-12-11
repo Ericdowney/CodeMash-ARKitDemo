@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		890E754121B5A5D300AC4B67 /* SceneKit+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */; };
 		890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */; };
-		8933E5C621B8071800E7D4C6 /* StoryboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933E5C521B8071800E7D4C6 /* StoryboardCreatable.swift */; };
 		89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48821B1C75400A90C82 /* AppDelegate.swift */; };
 		89A6C48B21B1C75400A90C82 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A6C48A21B1C75400A90C82 /* art.scnassets */; };
 		89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C48C21B1C75400A90C82 /* ARDemoViewController.swift */; };
@@ -30,6 +29,8 @@
 		89A6C4EA21B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */; };
 		89A6C4EC21B1F48F00A90C82 /* SharingARContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */; };
 		89A6C4EE21B2041A00A90C82 /* ARTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6C4ED21B2041A00A90C82 /* ARTableViewController.swift */; };
+		C12404A021BEE19C003747C5 /* UIStoryboard+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */; };
+		C12404A321BEEF2A003747C5 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12404A221BEEF2A003747C5 /* MultipeerManager.swift */; };
 		C1FEA7BD21B3353D00793EE2 /* ReferenceObjectScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FEA7BC21B3353D00793EE2 /* ReferenceObjectScannerViewController.swift */; };
 		C1FEA7BF21B337AF00793EE2 /* Demo1.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FEA7BE21B337AF00793EE2 /* Demo1.sks */; };
 		C1FEA7C221B3385D00793EE2 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = C1FEA7C021B3385D00793EE2 /* Rain.sks */; };
@@ -50,7 +51,6 @@
 /* Begin PBXFileReference section */
 		890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneKit+Utilities.swift"; sourceTree = "<group>"; };
 		890E754E21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseARInteractionViewController.swift; sourceTree = "<group>"; };
-		8933E5C521B8071800E7D4C6 /* StoryboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardCreatable.swift; sourceTree = "<group>"; };
 		89A6C48521B1C75400A90C82 /* ARDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A6C48821B1C75400A90C82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A6C48A21B1C75400A90C82 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		89A6C4E921B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractingWith3DObjectsViewController.swift; sourceTree = "<group>"; };
 		89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingARContentViewController.swift; sourceTree = "<group>"; };
 		89A6C4ED21B2041A00A90C82 /* ARTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTableViewController.swift; sourceTree = "<group>"; };
+		C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utilities.swift"; sourceTree = "<group>"; };
+		C12404A221BEEF2A003747C5 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		C1FEA7BC21B3353D00793EE2 /* ReferenceObjectScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceObjectScannerViewController.swift; sourceTree = "<group>"; };
 		C1FEA7BE21B337AF00793EE2 /* Demo1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Demo1.sks; sourceTree = "<group>"; };
 		C1FEA7C021B3385D00793EE2 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
@@ -104,16 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				890E754021B5A5D300AC4B67 /* SceneKit+Utilities.swift */,
+				C124049F21BEE19C003747C5 /* UIStoryboard+Utilities.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		8933E5C421B8070900E7D4C6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				8933E5C521B8071800E7D4C6 /* StoryboardCreatable.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		89A6C47C21B1C75400A90C82 = {
@@ -139,8 +134,8 @@
 			children = (
 				89A6C48821B1C75400A90C82 /* AppDelegate.swift */,
 				89A6C4AA21B1D28B00A90C82 /* AR Assets */,
-				8933E5C421B8070900E7D4C6 /* Protocols */,
 				890E753F21B5A5C200AC4B67 /* Utilities */,
+				C12404A121BEEF1F003747C5 /* Managers */,
 				89A6C4AB21B1D31E00A90C82 /* View Controllers */,
 				89A6C48E21B1C75400A90C82 /* Main.storyboard */,
 				89A6C49121B1C75500A90C82 /* Assets.xcassets */,
@@ -224,6 +219,14 @@
 				89A6C4EB21B1F48F00A90C82 /* SharingARContentViewController.swift */,
 			);
 			path = "Shared Experiences";
+			sourceTree = "<group>";
+		};
+		C12404A121BEEF1F003747C5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C12404A221BEEF2A003747C5 /* MultipeerManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,15 +338,16 @@
 				89A6C4EE21B2041A00A90C82 /* ARTableViewController.swift in Sources */,
 				89A6C4BD21B1D40500A90C82 /* FaceTrackingViewController.swift in Sources */,
 				89A6C4B321B1D35D00A90C82 /* SpriteKitContentViewController.swift in Sources */,
+				C12404A021BEE19C003747C5 /* UIStoryboard+Utilities.swift in Sources */,
 				C1FEA7BD21B3353D00793EE2 /* ReferenceObjectScannerViewController.swift in Sources */,
 				89A6C4B121B1D35300A90C82 /* FeaturePointTrackingViewController.swift in Sources */,
-				8933E5C621B8071800E7D4C6 /* StoryboardCreatable.swift in Sources */,
 				89A6C4EA21B1F46D00A90C82 /* InteractingWith3DObjectsViewController.swift in Sources */,
 				89A6C4BF21B1D41500A90C82 /* ReferenceImagesViewController.swift in Sources */,
 				89A6C48D21B1C75400A90C82 /* ARDemoViewController.swift in Sources */,
 				89A6C4B721B1D37900A90C82 /* BaseARDemoViewController.swift in Sources */,
 				89A6C48921B1C75400A90C82 /* AppDelegate.swift in Sources */,
 				890E754F21B5CB8A00AC4B67 /* BaseARInteractionViewController.swift in Sources */,
+				C12404A321BEEF2A003747C5 /* MultipeerManager.swift in Sources */,
 				89A6C4B521B1D36600A90C82 /* SceneKitContentViewController.swift in Sources */,
 				C1FEA7C521B339CB00793EE2 /* SpriteKit+SceneKitContentViewController.swift in Sources */,
 				89A6C4EC21B1F48F00A90C82 /* SharingARContentViewController.swift in Sources */,
